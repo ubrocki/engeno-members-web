@@ -4,6 +4,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { TabsContent } from "@radix-ui/react-tabs";
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 interface MemberDetailsPageProps {
   // define your props here
@@ -22,13 +23,6 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
         >
           Zurück
         </Link>
-        <Link
-          to=".."
-          relative="path"
-          className="w-30 bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-700 m-2"
-        >
-          Editieren
-        </Link>
       </div>
       <Tabs defaultValue="membership">
         <TabsList className="grid w-full grid-cols-3">
@@ -38,31 +32,47 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
         </TabsList>
         <TabsContent value="membership">
           <Card className="m-2 w-full max-w-md">
-            <CardHeader>
+            <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Mitgliedschaft</CardTitle>
+              <Button variant="outline" className="justify-self-end ">
+                Editieren
+              </Button>
             </CardHeader>
             <CardContent>
-              <div className="flex justify-normal gap-4">
-                <label>Mitgliedsnummer</label>
-                <label>2023000023</label>
-              </div>
-              <div className="flex justify-normal gap-4">
-                <label>Typ</label>
-                <label>institutionell</label>
-              </div>
-              <div className="flex justify-normal gap-4">
-                <label>Mitglied seid</label>
-                <label>12.04.2023</label>
-              </div>
-              <div className="flex justify-normal gap-4">
-                <label>Anteile</label>
-                <label>5</label>
+              <div className="grid grid-cols-2 gap-1">
+                <div className="flex justify-end">
+                  <label>Mitgliedsnr.</label>
+                </div>
+                <div className="flex justify-start ml-2">
+                  <label>2023000023</label>
+                </div>
+                <div className="flex justify-end">
+                  <label>Typ</label>
+                </div>
+                <div className="flex justify-start ml-2">
+                  <label>institutionell</label>
+                </div>
+                <div className="flex justify-end">
+                  <label>Mitglied seid</label>
+                </div>
+                <div className="flex justify-start ml-2">
+                  <label>12.04.2023</label>
+                </div>
+                <div className="flex justify-end">
+                  <label>Anteile</label>
+                </div>
+                <div className="flex justify-start ml-2">
+                  <label>5</label>
+                </div>
               </div>
             </CardContent>
           </Card>
           <Card className="m-2 w-full max-w-md">
-            <CardHeader>
+            <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Organisation</CardTitle>
+              <Button variant="outline" className="justify-self-end ">
+                Editieren
+              </Button>
             </CardHeader>
             <CardContent>
               <div className="flex justify-normal gap-4">
@@ -77,8 +87,11 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
             </CardContent>
           </Card>
           <Card className="m-2 w-full max-w-md">
-            <CardHeader>
+            <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Kontakt</CardTitle>
+              <Button variant="outline" className="justify-self-end ">
+                Editieren
+              </Button>
             </CardHeader>
             <CardContent>
               <div className="grid">
@@ -95,8 +108,11 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
         </TabsContent>
         <TabsContent value="account">
           <Card className="m-2 w-full max-w-md">
-            <CardHeader>
+            <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Konto</CardTitle>
+              <Button variant="outline" className="justify-self-end ">
+                Editieren
+              </Button>
             </CardHeader>
             <CardContent>
               <div className="flex justify-normal gap-4">

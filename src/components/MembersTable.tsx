@@ -2,14 +2,13 @@ import React from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "./ui/table";
 import { MemberPreview } from "@/models/MemberPreview";
-import { FaEdit } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 interface MembersTableProps {
@@ -20,9 +19,6 @@ interface MembersTableProps {
 const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
   return (
     <Table>
-      <TableCaption>
-        Die Mitglieder, die Deine Suchbedingung erfüllen ...
-      </TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Mitgliedsnr.</TableHead>
@@ -42,8 +38,11 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
             <TableCell>{member.email}</TableCell>
             <TableCell className="text-right">{member.shares}</TableCell>
             <TableCell>
-              <Link to={`/members/${member.id}`}>
-                <FaEdit className="ml-2" />
+              <Link
+                to={`/members/${member.id}`}
+                className="inline-flex items-center border border-transparent text-sm font-medium rounded-md text-black bg-slate-100 hover:bg-slate-400"
+              >
+                <FaEye className="m-2" />
               </Link>
             </TableCell>
           </TableRow>
