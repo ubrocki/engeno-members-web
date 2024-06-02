@@ -20,7 +20,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         </CardHeader>
         <CardContent className="flex flex-col justify-center items-center">
           <h2 className="text-3xl">378</h2>
-          <h1 className="text-xl">102.500 €</h1>
+          <h1 className="text-2xl">102.500 €</h1>
         </CardContent>
       </Card>
       <Card className="m-2 h-36 w-36">
