@@ -45,7 +45,7 @@ const Search: React.FC<SearchProps> = ({
         <input
           type="search"
           placeholder={placeholder}
-          className="border border-gray-300 mr-2 pt-1 pb-1 pl-2 rounded-md w-60"
+          className="border border-gray-300 mr-2 pt-1 pb-1 pl-2 pr-2 rounded-md w-60"
           defaultValue={initialSearchTerm ?? ""}
           ref={searchElement}
           onInput={handleInput}

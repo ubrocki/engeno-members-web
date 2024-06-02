@@ -1,12 +1,37 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
 
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
   return (
-    <div>
-      <h1>Welcome to the Home Page !!!!</h1>
-    </div>
+    <section className="flex">
+      <Card className="m-2 h-36 w-36">
+        <CardHeader>
+          <CardTitle>Genossen</CardTitle>
+        </CardHeader>
+        <CardContent className="flex justify-center">
+          <h2 className="text-3xl">198</h2>
+        </CardContent>
+      </Card>
+      <Card className="m-2 h-36 w-36">
+        <CardHeader>
+          <CardTitle>Anteile</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col justify-center items-center">
+          <h2 className="text-3xl">378</h2>
+          <h1 className="text-xl">102.500 €</h1>
+        </CardContent>
+      </Card>
+      <Card className="m-2 h-36 w-36">
+        <CardHeader>
+          <CardTitle>Interessenten</CardTitle>
+        </CardHeader>
+        <CardContent className="flex justify-center">
+          <h2 className="text-3xl">33</h2>
+        </CardContent>
+      </Card>
+    </section>
   );
 };
 
