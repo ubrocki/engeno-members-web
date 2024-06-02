@@ -17,6 +17,16 @@ const MainNavigation: React.FC<MainNavigationProps> = () => {
         <ul className="flex justify-center space-x-4">
           <li>
             <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? linkClassesActive : linkClasses
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="members"
               className={({ isActive }) =>
                 isActive ? linkClassesActive : linkClasses

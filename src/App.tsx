@@ -6,6 +6,7 @@ import ErrorPage from "./pages/ErrorPage";
 import MemberDetailsPage from "./pages/MemberDetailsPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SearchContextProvider } from "./stores/SearchContext";
+import HomePage from "./pages/HomePage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     ),
     errorElement: <ErrorPage />,
     children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
       {
         path: "members",
         element: <MembersPage />,

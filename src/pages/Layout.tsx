@@ -1,13 +1,13 @@
 import MainNavigation from "@/components/MainNavigation";
-import React, { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 interface LayoutProps {}
 
 const Layout: React.FC<LayoutProps> = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => navigate("members" as string, { replace: true }), [navigate]);
+  // useEffect(() => navigate("members" as string, { replace: true }), [navigate]);
 
   return (
     <>
