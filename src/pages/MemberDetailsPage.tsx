@@ -10,7 +10,7 @@ interface MemberDetailsPageProps {
 }
 
 const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
-  const params = useParams();
+  // const params = useParams();
 
   return (
     <section className="flex items-center flex-col gap-4">

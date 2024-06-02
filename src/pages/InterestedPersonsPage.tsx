@@ -9,11 +9,17 @@ const InterestedPersonsPage: React.FC<InterestedPersonsPageProps> = () => {
     console.log("Search button clicked!");
   }
 
+  function handleReset() {
+    console.log("Reset button clicked!");
+  }
+
   return (
     <div className="flex flex-col justify-between h-screen p-4">
       <Search
         placeholder="Suche Interssenten..."
+        initialSearchTerm=""
         onSearch={handleSearchButtonClick}
+        onReset={handleReset}
       />
       <div className="flex flex-col items-center justify-center flex-grow">
         <h1 className="text-2xl">Welcome to the interested persons page</h1>
