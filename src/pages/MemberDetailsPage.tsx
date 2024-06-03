@@ -5,6 +5,7 @@ import { TabsContent } from "@radix-ui/react-tabs";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import EditMembershipDialog from "@/components/dialogs/EditMembershipDialog";
 
 interface MemberDetailsPageProps {
   // define your props here
@@ -34,9 +35,7 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
           <Card className="m-2 w-full max-w-md">
             <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Mitgliedschaft</CardTitle>
-              <Button variant="outline" className="justify-self-end ">
-                Editieren
-              </Button>
+              <EditMembershipDialog />
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-1">

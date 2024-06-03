@@ -7,6 +7,8 @@ import MemberDetailsPage from "./pages/MemberDetailsPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SearchContextProvider } from "./stores/SearchContext";
 import HomePage from "./pages/HomePage";
+import MembersLayout from "./pages/MembersLayout";
+import NewMemberPage from "./pages/NewMemberPage";
 
 const router = createBrowserRouter([
   {
@@ -24,15 +26,25 @@ const router = createBrowserRouter([
       },
       {
         path: "members",
-        element: <MembersPage />,
+        element: <MembersLayout />,
+        children: [
+          {
+            index: true,
+            element: <MembersPage />,
+          },
+          {
+            path: ":memberId",
+            element: <MemberDetailsPage />,
+          },
+          {
+            path: "new-member",
+            element: <NewMemberPage />,
+          },
+        ],
       },
       {
         path: "interested-persons",
         element: <InterestedPersonsPage />,
-      },
-      {
-        path: "members/:memberId",
-        element: <MemberDetailsPage />,
       },
     ],
   },

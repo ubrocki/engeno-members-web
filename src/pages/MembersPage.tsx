@@ -5,6 +5,7 @@ import MembersTable from "@/components/MembersTable";
 import { useQuery } from "@tanstack/react-query";
 import MembersRepository from "@/data/MembersRepository";
 import SearchContext from "@/stores/SearchContext";
+import { Link } from "react-router-dom";
 
 interface MembersPageProps {}
 
@@ -41,14 +42,21 @@ const MembersPage: React.FC<MembersPageProps> = () => {
   const membersAvailable = data && data.length > 0;
 
   return (
-    <div className="flex flex-col justify-between h-screen p-4">
+    <div className="flex flex-col items-center justify-between h-screen">
       <Search
         placeholder="Suche Genossen..."
         initialSearchTerm={searchTerm}
         onSearch={handleSearchButtonClick}
         onReset={handleSearchTermReset}
       />
-      <div className="flex flex-col items-center flex-grow m-4">
+      <Link
+        to="new-member"
+        relative="path"
+        className="w-30 bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-700 mt-4"
+      >
+        + Neu
+      </Link>
+      <div className="flex flex-col items-center flex-grow mt-2">
         {!membersAvailable && (
           <>
             <h1 className="text-2xl">Wilkommen auf der Mitgliederübersicht</h1>

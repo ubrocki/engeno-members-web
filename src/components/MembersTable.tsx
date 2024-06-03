@@ -39,7 +39,7 @@ const MembersTable: React.FC<MembersTableProps> = ({ members }) => {
             <TableCell className="text-right">{member.shares}</TableCell>
             <TableCell>
               <Link
-                to={`/members/${member.id}`}
+                to={member.id}
                 className="inline-flex items-center border border-transparent text-sm font-medium rounded-md text-black bg-slate-100 hover:bg-slate-400"
               >
                 <FaEye className="m-2" />
