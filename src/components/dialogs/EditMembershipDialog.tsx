@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import { DialogFooter, DialogHeader } from "../ui/dialog";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
+import TypeOfMemberSelection from "../TypeOfMemberSelection";
 
 interface EditMembershipDialogProps {}
 
@@ -27,7 +28,7 @@ const EditMembershipDialog: React.FC<EditMembershipDialogProps> = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Editieren</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[400px]">
         <DialogHeader>
           <DialogTitle>Mitgliedschaft</DialogTitle>
           <DialogDescription>
@@ -37,28 +38,24 @@ const EditMembershipDialog: React.FC<EditMembershipDialogProps> = () => {
         </DialogHeader>
         <form className="grid gap-4 py-4" onSubmit={handleSubmit}>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="firstname" className="text-right">
-              Firstname
+            <Label htmlFor="type" className="text-right">
+              Typ
+            </Label>
+            <TypeOfMemberSelection />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4 mt-2">
+            <Label htmlFor="admission" className="text-right">
+              Mitglied seid
             </Label>
             <Input
-              id="firstname"
-              name="firstname"
-              defaultValue="Pedro"
+              id="admission"
+              name="admission"
+              type="date"
+              defaultValue={new Date().toISOString().split("T")[0]}
               className="col-span-3"
             />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="lastname" className="text-right">
-              Lastname
-            </Label>
-            <Input
-              id="lastname"
-              name="lastname"
-              defaultValue="Duarte"
-              className="col-span-3"
-            />
-          </div>
-          <DialogFooter>
+          <DialogFooter className="mt-2">
             <DialogClose asChild>
               <Button
                 type="submit"

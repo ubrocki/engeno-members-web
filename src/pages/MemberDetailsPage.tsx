@@ -6,6 +6,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import EditMembershipDialog from "@/components/dialogs/EditMembershipDialog";
+import EditOrganisationDialog from "@/components/dialogs/EditOrganisationDialog";
 
 interface MemberDetailsPageProps {
   // define your props here
@@ -69,9 +70,7 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
           <Card className="m-2 w-full max-w-md">
             <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Organisation</CardTitle>
-              <Button variant="outline" className="justify-self-end ">
-                Editieren
-              </Button>
+              <EditOrganisationDialog />
             </CardHeader>
             <CardContent>
               <div className="flex justify-normal gap-4">
@@ -94,7 +93,8 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
             </CardHeader>
             <CardContent>
               <div className="grid">
-                <label>Hand Meiser</label>
+                <label>Herr</label>
+                <label>Hans Meiser</label>
                 <label>Vor der Häke 23b</label>
                 <label>31812 Bad Pyrmont</label>
                 <div className="grid mt-2">
