@@ -133,7 +133,7 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
               <div className="flex justify-center gap-2 mt-2">
                 <Checkbox id="checkbox" checked={true} className="mt-1" />
                 <label htmlFor="checkbox" className="text-gray-600">
-                  SEPA Einzugsermächtigung erteilt
+                  SEPA Einzug erteilt am 23.06.2023
                 </label>
               </div>
             </CardContent>
