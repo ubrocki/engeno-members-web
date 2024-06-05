@@ -6,7 +6,11 @@ interface TypeOfMemberSelectionProps {}
 
 const TypeOfMemberSelection: React.FC<TypeOfMemberSelectionProps> = () => {
   return (
-    <RadioGroup defaultValue="private" name="tmember">
+    <RadioGroup
+      defaultValue="private"
+      name="tmember"
+      className="grid grid-cols-2 gap-4 w-full max-w-sm items-center"
+    >
       <div className="flex items-center space-x-2">
         <RadioGroupItem value="institutionel" id="institutionel" />
         <Label htmlFor="institutionel">Institutionell</Label>

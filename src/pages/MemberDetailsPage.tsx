@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import EditMembershipDialog from "@/components/dialogs/EditMembershipDialog";
 import EditOrganisationDialog from "@/components/dialogs/EditOrganisationDialog";
+import EditContactDialog from "@/components/dialogs/EditContactDialog";
+import EditAccountDialog from "@/components/dialogs/EditAccountDetails";
 
 interface MemberDetailsPageProps {
   // define your props here
@@ -87,9 +89,7 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
           <Card className="m-2 w-full max-w-md">
             <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Kontakt</CardTitle>
-              <Button variant="outline" className="justify-self-end ">
-                Editieren
-              </Button>
+              <EditContactDialog />
             </CardHeader>
             <CardContent>
               <div className="grid">
@@ -109,26 +109,40 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
           <Card className="m-2 w-full max-w-md">
             <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Konto</CardTitle>
-              <Button variant="outline" className="justify-self-end ">
-                Editieren
-              </Button>
+              <EditAccountDialog />
             </CardHeader>
             <CardContent>
-              <div className="flex justify-normal gap-4">
-                <label>Inhaber</label>
-                <label>Ulrich Brickerhoff</label>
+              <div className="grid grid-cols-3 gap-1">
+                <div className="flex justify-end">
+                  <label>Inhaber</label>
+                </div>
+                <div className="flex justify-left ml-2 col-span-2">
+                  <label>Ulrich Brockerhoff</label>
+                </div>
               </div>
-              <div className="flex justify-normal gap-4">
-                <label>Institut</label>
-                <label>Sparkasse Bad Pyrmont</label>
+              <div className="grid grid-cols-3 gap-1">
+                <div className="flex justify-end">
+                  <label>Institut</label>
+                </div>
+                <div className="flex justify-left ml-2 col-span-2">
+                  <label>Sparkasse Bad Pyrmont</label>
+                </div>
               </div>
-              <div className="flex justify-normal gap-4">
-                <label>IBAN</label>
-                <label>DE12 0000 1111 2222 3333 21</label>
+              <div className="grid grid-cols-3 gap-1">
+                <div className="flex justify-end">
+                  <label>IBAN</label>
+                </div>
+                <div className="flex justify-left ml-2 col-span-2">
+                  <label>DE72 0000 1111 2222 3333 21</label>
+                </div>
               </div>
-              <div className="flex justify-normal gap-4">
-                <label>BIC</label>
-                <label>SP1234X</label>
+              <div className="grid grid-cols-3 gap-1">
+                <div className="flex justify-end">
+                  <label>BIC</label>
+                </div>
+                <div className="flex justify-left ml-2 col-span-2">
+                  <label>SP1234X</label>
+                </div>
               </div>
               <div className="flex justify-center gap-2 mt-2">
                 <Checkbox id="checkbox" checked={true} className="mt-1" />

@@ -11,10 +11,11 @@ import { Button } from "../ui/button";
 import { DialogFooter, DialogHeader } from "../ui/dialog";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
+import SalutationSelection from "../SalutationSelection";
 
-interface EditOrganisationDialogProps {}
+interface EditContactDialogProps {}
 
-const EditOrganisationDialog: React.FC<EditOrganisationDialogProps> = () => {
+const EditContactDialog: React.FC<EditContactDialogProps> = () => {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -29,22 +30,38 @@ const EditOrganisationDialog: React.FC<EditOrganisationDialogProps> = () => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[400px]">
         <DialogHeader>
-          <DialogTitle>Organisation</DialogTitle>
+          <DialogTitle>Kontakt</DialogTitle>
           <DialogDescription>
-            Ändern Sie den Name der Organisation oder die Geschäftsadresse und
-            klicken Sie auf Speichern
+            Ändern Sie die Kontaktdaten und klicken Sie auf Speichern
           </DialogDescription>
         </DialogHeader>
         <form className="grid gap-4 py-4" onSubmit={handleSubmit}>
           <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="orgname" className="text-left">
-              Organsisationsname
+            <Label htmlFor="type" className="text-left mb-2">
+              Typ
+            </Label>
+            <SalutationSelection />
+          </div>
+          <div>
+            <Label htmlFor="firstname" className="text-left">
+              Vorname
             </Label>
             <Input
-              id="orgname"
-              name="orgname"
+              id="firstname"
+              name="firstname"
               type="text"
-              defaultValue="Musterorganisation GmbH"
+              defaultValue="Max"
+            />
+          </div>
+          <div>
+            <Label htmlFor="lastname" className="text-left">
+              Nachname
+            </Label>
+            <Input
+              id="nachname"
+              name="nachname"
+              type="text"
+              defaultValue="Mustermann"
             />
           </div>
           <div className="grid grid-cols-3 gap-4 w-full max-w-sm items-center">
@@ -99,6 +116,28 @@ const EditOrganisationDialog: React.FC<EditOrganisationDialogProps> = () => {
               />
             </div>
           </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="email" className="text-left">
+              E-Mail
+            </Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              defaultValue="max@example.com"
+            />
+          </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="phone" className="text-left">
+              Telefon
+            </Label>
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              defaultValue="05281 123456"
+            />
+          </div>
           <DialogFooter className="mt-2">
             <DialogClose asChild>
               <Button
@@ -120,4 +159,4 @@ const EditOrganisationDialog: React.FC<EditOrganisationDialogProps> = () => {
   );
 };
 
-export default EditOrganisationDialog;
+export default EditContactDialog;

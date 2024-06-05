@@ -10,11 +10,11 @@ import React from "react";
 import { Button } from "../ui/button";
 import { DialogFooter, DialogHeader } from "../ui/dialog";
 import { Label } from "../ui/label";
-import TypeOfMemberSelection from "../TypeOfMemberSelection";
+import { Input } from "../ui/input";
 
-interface EditMembershipDialogProps {}
+interface EditAccountDialogProps {}
 
-const EditMembershipDialog: React.FC<EditMembershipDialogProps> = () => {
+const EditAccountDialog: React.FC<EditAccountDialogProps> = () => {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -27,34 +27,54 @@ const EditMembershipDialog: React.FC<EditMembershipDialogProps> = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Editieren</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[300px]">
+      <DialogContent className="sm:max-w-[400px]">
         <DialogHeader>
-          <DialogTitle>Mitgliedschaft</DialogTitle>
+          <DialogTitle>Konto</DialogTitle>
           <DialogDescription>
-            Ändern Sie den Typ oder das Beitrittsdatum und klicken Sie auf
-            Speichern
+            Ändern Sie die Kontoverbindung und klicken Sie auf Speichern
           </DialogDescription>
         </DialogHeader>
         <form className="grid gap-4 py-4" onSubmit={handleSubmit}>
           <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="type" className="text-left mb-2">
-              Typ
+            <Label htmlFor="owner" className="text-left">
+              Inhaber
             </Label>
-            <TypeOfMemberSelection />
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="admission" className="text-left">
-              Mitglied seid
-            </Label>
-            <input
-              id="admission"
-              name="admission"
-              type="date"
-              autoFocus={false}
-              defaultValue={new Date().toISOString().split("T")[0]}
-              className="w-48 rounded border border-gray-30"
+            <Input
+              id="owner"
+              name="owner"
+              type="text"
+              defaultValue="Max Mustermann"
             />
           </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="institute" className="text-left">
+              Institut
+            </Label>
+            <Input
+              id="institute"
+              name="institute"
+              type="text"
+              defaultValue="Sparkasse Bad Pyrmont"
+            />
+          </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="iban" className="text-left">
+              IBAN
+            </Label>
+            <Input
+              id="iban"
+              name="iban"
+              type="text"
+              defaultValue="DE72 0000 1111 2222 3333 21"
+            />
+          </div>
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Label htmlFor="bic" className="text-left">
+              BIC
+            </Label>
+            <Input id="bic" name="bic" type="text" defaultValue="SP1234X" />
+          </div>
+
           <DialogFooter className="mt-2">
             <DialogClose asChild>
               <Button
@@ -76,4 +96,4 @@ const EditMembershipDialog: React.FC<EditMembershipDialogProps> = () => {
   );
 };
 
-export default EditMembershipDialog;
+export default EditAccountDialog;
