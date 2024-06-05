@@ -4,11 +4,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { TabsContent } from "@radix-ui/react-tabs";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import EditMembershipDialog from "@/components/dialogs/EditMembershipDialog";
 import EditOrganisationDialog from "@/components/dialogs/EditOrganisationDialog";
 import EditContactDialog from "@/components/dialogs/EditContactDialog";
-import EditAccountDialog from "@/components/dialogs/EditAccountDetails";
+import EditAccountDialog from "@/components/dialogs/EditAccountDialog";
 
 interface MemberDetailsPageProps {
   // define your props here
