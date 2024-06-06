@@ -13,11 +13,7 @@ import NewMemberPage from "./pages/NewMemberPage";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <SearchContextProvider>
-        <Layout />
-      </SearchContextProvider>
-    ),
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       {

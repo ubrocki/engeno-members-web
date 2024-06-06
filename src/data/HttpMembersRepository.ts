@@ -1,5 +1,6 @@
 import { MemberPreview } from "@/models/MemberPreview";
 import { MembersRepository } from "./MembersRepository";
+import { ShareTransaction } from "@/models/ShareTransaction";
 
 export class HttpMembersRepository implements MembersRepository {
   baseUrl: string;
@@ -28,5 +29,11 @@ export class HttpMembersRepository implements MembersRepository {
     }
 
     return members as MemberPreview[];
+  }
+
+  async getTransactionsForMember(
+    memberid: string
+  ): Promise<ShareTransaction[]> {
+    throw new Error("Method not implemented.");
   }
 }

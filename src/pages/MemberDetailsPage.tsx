@@ -8,6 +8,9 @@ import EditMembershipDialog from "@/components/dialogs/EditMembershipDialog";
 import EditOrganisationDialog from "@/components/dialogs/EditOrganisationDialog";
 import EditContactDialog from "@/components/dialogs/EditContactDialog";
 import EditAccountDialog from "@/components/dialogs/EditAccountDialog";
+import ShareTransactionsTable from "@/components/ShareTransactionsTable";
+import TRANSACTIONS from "@/data/available-bookings";
+import { Button } from "@/components/ui/button";
 
 interface MemberDetailsPageProps {
   // define your props here
@@ -151,6 +154,43 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
               </div>
             </CardContent>
           </Card>
+        </TabsContent>
+        <TabsContent value="bookings">
+          <div className="flex mt-2 mb-4">
+            <Card className="mr-2">
+              <CardHeader className="flex flex-row justify-between items-center">
+                <CardTitle>Gebuchte Anteile</CardTitle>
+              </CardHeader>
+              <CardContent>5</CardContent>
+            </Card>
+            <Card className="mr-2">
+              <CardHeader className="flex flex-row justify-between items-center">
+                <CardTitle>Offene Zeichnungen</CardTitle>
+              </CardHeader>
+              <CardContent>keine</CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row justify-between items-center">
+                <CardTitle>Offene Kündigungen</CardTitle>
+              </CardHeader>
+              <CardContent>keine</CardContent>
+            </Card>
+          </div>
+          <div className="flex justify-end">
+            <Button variant="outline" className="m-1">
+              Zeichnen
+            </Button>
+            <Button variant="outline" className="m-1">
+              Einbuchen
+            </Button>
+            <Button variant="outline" className="m-1">
+              Kündigen
+            </Button>
+            <Button variant="outline" className="m-1">
+              Ausbuchen
+            </Button>
+          </div>
+          <ShareTransactionsTable transactions={TRANSACTIONS} />
         </TabsContent>
       </Tabs>
     </section>
