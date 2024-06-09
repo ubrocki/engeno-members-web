@@ -7,7 +7,9 @@ interface NewMemberPageProps {
 const NewMemberPage: React.FC<NewMemberPageProps> = () => {
   // use your props here
 
-  return <div>Willkommen auf der Seite zum Einrichten neuer Mitglieder.</div>;
+  return (
+    <div>Willkommen auf der Seite zum Einrichten eines neuen Genossen.</div>
+  );
 };
 
 export default NewMemberPage;

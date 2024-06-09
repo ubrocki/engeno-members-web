@@ -1,4 +1,4 @@
-import { TransactionType } from "@/models/ShareTransaction";
+import { ShareTransaction, TransactionType } from "@/models/ShareTransaction";
 
 const TRANSACTIONS: ShareTransaction[] = [
   {

@@ -5,10 +5,12 @@ import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import MemberDetailsPage from "./pages/MemberDetailsPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SearchContextProvider } from "./stores/SearchContext";
 import HomePage from "./pages/HomePage";
 import MembersLayout from "./pages/MembersLayout";
 import NewMemberPage from "./pages/NewMemberPage";
+import NewInterestedPersonPage from "./pages/NewInterestedPersonPage";
+import InterestedPersonsLayout from "./pages/InterestedPersonsLayout";
+import InterestedPersonDetailsPage from "./pages/InterestedPersonDetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +42,21 @@ const router = createBrowserRouter([
       },
       {
         path: "interested-persons",
-        element: <InterestedPersonsPage />,
+        element: <InterestedPersonsLayout />,
+        children: [
+          {
+            index: true,
+            element: <InterestedPersonsPage />,
+          },
+          {
+            path: ":interestedId",
+            element: <InterestedPersonDetailsPage />,
+          },
+          {
+            path: "new-interested",
+            element: <NewInterestedPersonPage />,
+          },
+        ],
       },
     ],
   },
