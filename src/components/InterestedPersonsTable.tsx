@@ -31,7 +31,7 @@ const InterestedPersonsTable: React.FC<InterestedPersonsTableProps> = ({
       </TableHeader>
       <TableBody>
         {persons.map((person) => (
-          <TableRow key={person.id}>
+          <TableRow key={person.interestedId}>
             <TableCell className="font-medium">{person.lastname}</TableCell>
             <TableCell>
               <p>{person.firstname}</p>
@@ -40,7 +40,7 @@ const InterestedPersonsTable: React.FC<InterestedPersonsTableProps> = ({
             <TableCell className="text-right">{person.phone}</TableCell>
             <TableCell>
               <Link
-                to={person.id}
+                to={person.interestedId}
                 className="inline-flex items-center border border-transparent text-sm font-medium rounded-md text-black bg-slate-100 hover:bg-slate-400"
               >
                 <FaEye className="m-2" />

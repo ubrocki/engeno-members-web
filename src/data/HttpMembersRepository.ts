@@ -32,8 +32,9 @@ export class HttpMembersRepository implements MembersRepository {
   }
 
   async getTransactionsForMember(
-    memberid: string
+    memberId: string
   ): Promise<ShareTransaction[]> {
-    throw new Error("Method not implemented.");
+    console.log(memberId);
+    return Promise.resolve([]);
   }
 }

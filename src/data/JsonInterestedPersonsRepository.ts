@@ -22,6 +22,7 @@ export class JsonInterestedPersonsRepository
     searchTerm?: string,
     max?: number
   ): Promise<InterestedPerson[]> {
+    console.log(max);
     // Simulate a delay with setTimeout
     return new Promise((resolve) => {
       setTimeout(() => {
