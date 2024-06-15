@@ -42,7 +42,7 @@ const InterestedPersonsPage: React.FC<InterestedPersonsPageProps> = () => {
   const interestedAvailable = data && data.length > 0;
 
   return (
-    <div className="flex flex-col items-center justify-between h-screen">
+    <div className="flex h-screen flex-col items-center justify-between">
       <Search
         placeholder="Suche Interessenten..."
         initialSearchTerm={searchTerm}
@@ -52,11 +52,11 @@ const InterestedPersonsPage: React.FC<InterestedPersonsPageProps> = () => {
       <Link
         to="new-interested"
         relative="path"
-        className="w-30 bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-700 mt-4"
+        className="w-30 mt-4 rounded bg-blue-500 px-4 py-1 text-white hover:bg-blue-700"
       >
         + Neu
       </Link>
-      <div className="flex flex-col items-center flex-grow mt-2">
+      <div className="mt-2 flex flex-grow flex-col items-center">
         {!interestedAvailable && (
           <>
             <h1 className="text-2xl">

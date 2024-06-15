@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import React from 'react';
 
 interface HomePageProps {}
 
@@ -18,7 +18,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         <CardHeader>
           <CardTitle>Beteiligungen</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col justify-center items-center">
+        <CardContent className="flex flex-col items-center justify-center">
           <h1 className="text-3xl">102.500 €</h1>
         </CardContent>
       </Card>
