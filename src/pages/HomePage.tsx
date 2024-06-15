@@ -1,11 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import React from "react";
 
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
   return (
-    <section className="flex">
+    <section className="flex justify-center">
       <Card className="m-2 h-36 w-48">
         <CardHeader>
           <CardTitle>Genossen</CardTitle>

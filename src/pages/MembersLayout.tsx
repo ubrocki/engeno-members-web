@@ -10,7 +10,7 @@ const MembersLayout: React.FC<MembersLayoutProps> = () => {
 
   return (
     <>
-      <section className="flex justify-center h-screen">
+      <section className="flex w-full justify-center">
         <Outlet />
       </section>
     </>

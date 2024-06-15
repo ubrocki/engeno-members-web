@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/engeno.webp";
+import { Button } from "./ui/button";
+import { TfiSettings } from "react-icons/tfi";
 
 interface MainNavigationProps {}
 
@@ -9,7 +11,7 @@ const MainNavigation: React.FC<MainNavigationProps> = () => {
   const linkClassesActive = "text-xl text-orange-200 underline";
 
   return (
-    <header className="bg-blue-500 p-4 flex justify-between items-center">
+    <header className="flex w-full items-center justify-between bg-blue-500 p-4">
       <div className="w-20">
         <img src={logo} alt="Logo" className="h-auto w-full" />
       </div>
@@ -47,7 +49,9 @@ const MainNavigation: React.FC<MainNavigationProps> = () => {
           </li>
         </ul>
       </nav>
-      <div className="w-20"></div>
+      <Button variant="outline" className="border-none">
+        <TfiSettings color="white" size={25} />
+      </Button>
     </header>
   );
 };

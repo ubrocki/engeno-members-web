@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = () => {
   return (
     <>
       <MainNavigation />
-      <main className="flex justify-center h-screen pt-4">
+      <main className="flex w-full justify-center pt-4">
         <Outlet />
       </main>
     </>
