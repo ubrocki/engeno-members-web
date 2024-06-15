@@ -18,9 +18,10 @@ interface MemberDetailsPageProps {
 
 const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
   // const params = useParams();
+  const cardClassesForOrganisation = "m-2";
 
   return (
-    <section className="flex items-center flex-col gap-4">
+    <section className="flex items-center flex-col gap-4 ">
       <div>
         <Link
           to=".."
@@ -30,14 +31,46 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
           Zurück
         </Link>
       </div>
+      <Card className="m-2 w-96">
+        <CardHeader className="flex flex-row justify-between items-center">
+          <CardTitle>Kontakt</CardTitle>
+          <EditContactDialog />
+        </CardHeader>
+        <CardContent>
+          <div className="grid">
+            <label>Herr Hans Meiser</label>
+            <label>Vor der Häke 23b</label>
+            <label>31812 Bad Pyrmont</label>
+            <div className="grid mt-2">
+              <label>ubrockerhoff@hotmail.de</label>
+              <label>+49 (0)5251 123456</label>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       <Tabs defaultValue="membership">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="membership">Mitgliedschaft</TabsTrigger>
-          <TabsTrigger value="account">Bankdetails</TabsTrigger>
-          <TabsTrigger value="bookings">Anteile</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-3 bg-slate-50">
+          <TabsTrigger
+            value="membership"
+            className="hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200  data-[state=active]:bg-slate-400"
+          >
+            Mitgliedschaft
+          </TabsTrigger>
+          <TabsTrigger
+            value="account"
+            className="hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200  data-[state=active]:bg-slate-400"
+          >
+            Bankdetails
+          </TabsTrigger>
+          <TabsTrigger
+            value="bookings"
+            className="hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200 data-[state=active]:bg-slate-400"
+          >
+            Beteiligungen
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="membership">
-          <Card className="m-2 w-full max-w-md">
+          <Card className="m-2">
             <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Mitgliedschaft</CardTitle>
               <EditMembershipDialog />
@@ -71,7 +104,7 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
               </div>
             </CardContent>
           </Card>
-          <Card className="m-2 w-full max-w-md">
+          <Card className={cardClassesForOrganisation}>
             <CardHeader className="flex flex-row justify-between items-center">
               <CardTitle>Organisation</CardTitle>
               <EditOrganisationDialog />
@@ -85,24 +118,6 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
               </div>
               <div className="flex justify-normal gap-4">
                 <label>12345 Bloomberg</label>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="m-2 w-full max-w-md">
-            <CardHeader className="flex flex-row justify-between items-center">
-              <CardTitle>Kontakt</CardTitle>
-              <EditContactDialog />
-            </CardHeader>
-            <CardContent>
-              <div className="grid">
-                <label>Herr</label>
-                <label>Hans Meiser</label>
-                <label>Vor der Häke 23b</label>
-                <label>31812 Bad Pyrmont</label>
-                <div className="grid mt-2">
-                  <label>ubrockerhoff@hotmail.de</label>
-                  <label>+49 (0)5251 123456</label>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -159,9 +174,9 @@ const MemberDetailsPage: React.FC<MemberDetailsPageProps> = () => {
           <div className="flex mt-2 mb-4">
             <Card className="mr-2">
               <CardHeader className="flex flex-row justify-between items-center">
-                <CardTitle>Gebuchte Anteile</CardTitle>
+                <CardTitle>Beteiligung</CardTitle>
               </CardHeader>
-              <CardContent>5</CardContent>
+              <CardContent>2500 €</CardContent>
             </Card>
             <Card className="mr-2">
               <CardHeader className="flex flex-row justify-between items-center">

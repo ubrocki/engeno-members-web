@@ -24,9 +24,8 @@ const ShareTransactionsTable: React.FC<ShareTransactionsTableProps> = ({
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Buchungstyp</TableHead>
-          <TableHead>Datum</TableHead>
-          <TableHead className="text-right">Anzahl</TableHead>
-          <TableHead className="text-right">Wert pro Anteil</TableHead>
+          <TableHead className="text-center">Datum</TableHead>
+          <TableHead className="text-center">Beteiligung (€)</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -35,14 +34,11 @@ const ShareTransactionsTable: React.FC<ShareTransactionsTableProps> = ({
             <TableCell className="font-medium">
               {fromTypeToText(transaction.typeOfTransaction)}
             </TableCell>
-            <TableCell>
+            <TableCell className="text-center">
               {transaction.dateOfTransaction.toLocaleDateString("de-DE")}
             </TableCell>
-            <TableCell className="text-right">
-              {transaction.noOfShares}
-            </TableCell>
-            <TableCell className="text-right">
-              {transaction.valuePerShare}
+            <TableCell className="text-center">
+              {transaction.valuePerShare * transaction.noOfShares}
             </TableCell>
             <TableCell>
               <Link

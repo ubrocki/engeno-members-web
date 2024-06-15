@@ -28,7 +28,7 @@ const EditContactDialog: React.FC<EditContactDialogProps> = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Editieren</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[400px]">
+      <DialogContent className="sm:max-w-[400px]  bg-slate-50">
         <DialogHeader>
           <DialogTitle>Kontakt</DialogTitle>
           <DialogDescription>

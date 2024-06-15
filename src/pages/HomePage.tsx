@@ -6,7 +6,7 @@ interface HomePageProps {}
 const HomePage: React.FC<HomePageProps> = () => {
   return (
     <section className="flex">
-      <Card className="m-2 h-36 w-40">
+      <Card className="m-2 h-36 w-48">
         <CardHeader>
           <CardTitle>Genossen</CardTitle>
         </CardHeader>
@@ -14,16 +14,15 @@ const HomePage: React.FC<HomePageProps> = () => {
           <h2 className="text-3xl">198</h2>
         </CardContent>
       </Card>
-      <Card className="m-2 h-36 w-40">
+      <Card className="m-2 h-36 w-48">
         <CardHeader>
-          <CardTitle>Anteile</CardTitle>
+          <CardTitle>Beteiligungen</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col justify-center items-center">
-          <h2 className="text-3xl">378</h2>
-          <h1 className="text-xl">102.500 €</h1>
+          <h1 className="text-3xl">102.500 €</h1>
         </CardContent>
       </Card>
-      <Card className="m-2 h-36 w-40">
+      <Card className="m-2 h-36 w-48">
         <CardHeader>
           <CardTitle>Interessenten</CardTitle>
         </CardHeader>

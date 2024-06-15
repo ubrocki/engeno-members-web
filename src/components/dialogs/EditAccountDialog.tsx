@@ -27,7 +27,7 @@ const EditAccountDialog: React.FC<EditAccountDialogProps> = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Editieren</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[400px]">
+      <DialogContent className="sm:max-w-[400px] bg-slate-50">
         <DialogHeader>
           <DialogTitle>Konto</DialogTitle>
           <DialogDescription>

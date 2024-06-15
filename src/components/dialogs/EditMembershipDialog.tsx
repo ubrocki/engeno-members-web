@@ -27,7 +27,7 @@ const EditMembershipDialog: React.FC<EditMembershipDialogProps> = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Editieren</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[300px]">
+      <DialogContent className="sm:max-w-[300px] bg-slate-50">
         <DialogHeader>
           <DialogTitle>Mitgliedschaft</DialogTitle>
           <DialogDescription>

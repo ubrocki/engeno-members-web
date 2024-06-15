@@ -7,9 +7,10 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
-import { FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { InterestedPerson } from "@/models/InterestedPerson";
+import EditInterestedPersonDialog from "./dialogs/EditInterestedPerson";
+import { Button } from "./ui/button";
+import { AiTwotoneDelete } from "react-icons/ai";
 
 interface InterestedPersonsTableProps {
   // define your props here
@@ -39,12 +40,13 @@ const InterestedPersonsTable: React.FC<InterestedPersonsTableProps> = ({
             <TableCell>{person.email}</TableCell>
             <TableCell className="text-right">{person.phone}</TableCell>
             <TableCell>
-              <Link
-                to={person.interestedId}
-                className="inline-flex items-center border border-transparent text-sm font-medium rounded-md text-black bg-slate-100 hover:bg-slate-400"
+              <EditInterestedPersonDialog />
+              <Button
+                variant="outline"
+                className="p-2 bg-slate-100 hover:bg-slate-400"
               >
-                <FaEye className="m-2" />
-              </Link>
+                <AiTwotoneDelete />
+              </Button>
             </TableCell>
           </TableRow>
         ))}
